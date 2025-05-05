@@ -1,6 +1,6 @@
 package com.leviplanelles.tema10.Ejercicio4;
 
-public class Electrodomestico {
+public abstract class Electrodomestico {
     public enum ConsumoEnergetico {
         A,B,C,D,E,F
     }
@@ -41,6 +41,11 @@ public class Electrodomestico {
 
     }
 
+    /**
+     * Comprueba que el color introducido sea el correcto
+     * @param color
+     * @return
+     */
     private Color comprobarColor(String color) {
          return switch (color) {
             case "blanco" -> Color.BLANCO;
@@ -52,6 +57,11 @@ public class Electrodomestico {
         };
     }
 
+    /**
+     * Comprueba que la letra del consumo energético sea la correcta
+     * @param consumoEnergetico
+     * @return
+     */
     private ConsumoEnergetico comprobarConsumoEnergetico(char consumoEnergetico) {
         return switch (consumoEnergetico) {
             case 'A' -> ConsumoEnergetico.A;
@@ -64,6 +74,10 @@ public class Electrodomestico {
         };
     }
 
+    /**
+     * Método que sirve para calcular el precio final de un electrodoméstico dependiendo de su consumo y su peso
+     * @return
+     */
     public double precioFinal() {
         int tamanio;
         int consumo = switch (consumoEnergetico) {
@@ -100,15 +114,5 @@ public class Electrodomestico {
 
     public double getPeso() {
         return peso;
-    }
-
-    @Override
-    public String toString() {
-        return "Electrodomestico{" +
-                "precioBase=" + precioBase +
-                ", color=" + color +
-                ", consumoEnergetico=" + consumoEnergetico +
-                ", peso=" + peso +
-                '}';
     }
 }
