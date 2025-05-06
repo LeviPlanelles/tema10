@@ -2,11 +2,11 @@ package com.leviplanelles.tema10.Ejercicio4;
 
 public class Television extends Electrodomestico{
     //DEFAULT CONSTRUCTOR
-    private double DEFAULT_RESOLUTION = 20;
-    private boolean DEFAULT_IS_SMARTTV = false;
+    private final double DEFAULT_RESOLUTION = 20;
+    private final boolean DEFAULT_IS_SMARTTV = false;
     //-----
-    private double resolucion;
-    private boolean isSmartTV;
+    private final double resolucion;
+    private final boolean isSmartTV;
 
     public Television() {
         super();
