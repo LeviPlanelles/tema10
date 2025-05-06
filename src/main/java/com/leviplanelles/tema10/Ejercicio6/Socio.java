@@ -5,6 +5,7 @@ import com.leviplanelles.tema10.Ejercicio4.Electrodomestico;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Socio {
     private final String nif;
@@ -57,5 +58,21 @@ public class Socio {
 
     public void setRecargoPendiente(boolean recargoPendiente) {
         this.recargoPendiente = recargoPendiente;
+    }
+
+    public void setAlquileres(List<Alquiler> alquileres) {
+        this.alquileres = alquileres;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Socio socio = (Socio) o;
+        return Objects.equals(nif, socio.nif);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(nif);
     }
 }
