@@ -3,11 +3,13 @@ package com.leviplanelles.tema10.Ejercicio7;
 import java.util.Arrays;
 
 public class Fila {
-    private static final int CANT_ASIENTOS = 30;
+    private static final int CANT_ASIENTOS = Config.CANT_ASIENTOS;
     private final Asiento[] asientos;
+    private final int numFila;
 
-    public Fila() {
+    public Fila(int numFila) {
         this.asientos = new Asiento[CANT_ASIENTOS];
+        this.numFila = numFila;
         rellenarFila();
     }
 
@@ -15,6 +17,10 @@ public class Fila {
         for (int i = 0; i < asientos.length; i++) {
             asientos[i] = new Asiento(i+1);
         }
+    }
+
+    public int getNumFila() {
+        return numFila;
     }
 
     public Asiento[] getAsientos() {
